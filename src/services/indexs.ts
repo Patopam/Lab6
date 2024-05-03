@@ -1,6 +1,6 @@
 const firebase = require('firebase/app');
 import 'firebase/firestore';
-const { initializeApp } = require('firebase-admin/app');
+const { initializeApp } = require('firebase/app');
 const { getFirestore } = require('firebase/firestore');
 const { collection, addDoc, getDocs } = require('firebase/firestore');
 import { AddCards } from '../types/index';
@@ -18,6 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export const addmusic = async (FormData: Omit<AddCards, 'id'>) => {
+	console.log('form', FormData);
 	try {
 		const docRef = await addDoc(collection(db, 'Music'), FormData);
 		console.log('Document written with ID: ', docRef.id);
@@ -34,5 +35,6 @@ export const getmusic = async () => {
 		const data = doc.data() as any;
 		Arraysongs.push({ id: doc.id, ...data });
 	});
+	console.log('get', Arraysongs);
 	return Arraysongs;
 };

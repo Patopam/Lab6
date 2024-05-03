@@ -9,7 +9,7 @@ const FormData: Omit<AddCards, 'id'> = {
 	Duration: '',
 };
 
-class songs extends HTMLElement {
+class Songs extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -52,5 +52,5 @@ class songs extends HTMLElement {
 	}
 }
 
-customElements.define('custom-songs', songs);
-export default songs;
+customElements.define('custom-songs', Songs);
+export default Songs;

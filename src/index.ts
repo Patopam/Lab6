@@ -1,3 +1,4 @@
+import Card from './components/card/card';
 import './components/export';
 
 class AppContainer extends HTMLElement {
@@ -11,7 +12,7 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		const something = this.ownerDocument.createElement('custom-card');
+		const something = this.ownerDocument.createElement('custom-card') as Card;
 		this.shadowRoot?.appendChild(something);
 	}
 }

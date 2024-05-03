@@ -9,7 +9,7 @@ const FormData: Omit<AddCards, 'id'> = {
 	Duration: '',
 };
 
-class card extends HTMLElement {
+class Card extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -86,13 +86,9 @@ class card extends HTMLElement {
 
 			const songs = this.ownerDocument.createElement('custom-songs');
 			this.shadowRoot?.appendChild(songs);
-
-			this.shadowRoot.innerHTML = `
-
-			`;
 		}
 	}
 }
 
-customElements.define('custom-card', card);
-export default card;
+customElements.define('custom-card', Card);
+export default Card;
